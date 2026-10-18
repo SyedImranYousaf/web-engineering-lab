@@ -1,0 +1,15 @@
+{
+  "name": "web-engineering-lab",
+  "version": "1.0.0",
+  "description": "Web Engineering Lab project",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "eslint": "^10.13.0",
+    "prettier": "^3.9.10"
+  }
+}

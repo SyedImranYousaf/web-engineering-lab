@@ -3,14 +3,159 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Engineering Lab</title>
+    <title>Web Engineering Lab - Accessibility</title>
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="script.js"></script>
   </head>
+
   <body>
-    <main class="container">
-      <h1 id="greeting">Hello World!...</h1>
-      <p>My first Web Engineering Lab project.</p>
+    <!-- Skip navigation link -->
+    <a href="#main-content" class="skip-link"> Skip to main content </a>
+
+    <!-- Website header -->
+    <header>
+      <h1 id="greeting">Loading greeting...</h1>
+      <p>Welcome to my Web Engineering Lab 2 project.</p>
+
+      <!-- Navigation -->
+      <nav aria-label="Main navigation">
+        <ul>
+          <li>
+            <a href="#schedule" aria-current="location">Office Hours</a>
+          </li>
+          <li>
+            <a href="#feedback">Send Feedback</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main content -->
+    <main id="main-content">
+      <!-- Section 1: Office Hours -->
+      <section id="schedule">
+        <h2>Office Hours</h2>
+
+        <!-- Informative SVG -->
+        <figure>
+          <svg
+            role="img"
+            aria-labelledby="pin-title"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <title id="pin-title">Location pin</title>
+            <path
+              d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+              fill="#0b3d91"
+            />
+          </svg>
+          <figcaption>All office hours are held in Room 214.</figcaption>
+        </figure>
+
+        <!-- Accessible data table -->
+        <table>
+          <caption>
+            Weekly office hours
+          </caption>
+
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">Start Time</th>
+              <th scope="col">End Time</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th scope="row">Monday</th>
+              <td><time datetime="10:00">10:00 AM</time></td>
+              <td><time datetime="11:00">11:00 AM</time></td>
+            </tr>
+            <tr>
+              <th scope="row">Wednesday</th>
+              <td><time datetime="12:00">12:00 PM</time></td>
+              <td><time datetime="13:00">1:00 PM</time></td>
+            </tr>
+            <tr>
+              <th scope="row">Friday</th>
+              <td><time datetime="14:00">2:00 PM</time></td>
+              <td><time datetime="15:00">3:00 PM</time></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Decorative divider -->
+      <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3" fill="#0b3d91" />
+      </svg>
+
+      <!-- Section 2: Feedback form -->
+      <section id="feedback">
+        <h2>Send Feedback</h2>
+
+        <form>
+          <div>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div>
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              aria-describedby="email-hint"
+            />
+            <span id="email-hint">
+              We will only use this to reply to you.
+            </span>
+          </div>
+
+          <fieldset>
+            <legend>Topic</legend>
+
+            <div>
+              <input
+                type="radio"
+                id="suggestion"
+                name="topic"
+                value="suggestion"
+                required
+              />
+              <label for="suggestion">Suggestion</label>
+            </div>
+
+            <div>
+              <input type="radio" id="question" name="topic" value="question" />
+              <label for="question">Question</label>
+            </div>
+
+            <div>
+              <input type="radio" id="problem" name="topic" value="problem" />
+              <label for="problem">Problem</label>
+            </div>
+          </fieldset>
+
+          <div>
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit">Submit Feedback</button>
+        </form>
+      </section>
     </main>
+
+    <!-- Website footer -->
+    <footer>
+      <address>Contact your instructor for help.</address>
+      <p>&copy; 2026 Web Engineering Lab</p>
+    </footer>
   </body>
 </html>

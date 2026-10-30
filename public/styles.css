@@ -1,0 +1,170 @@
+/* General page styling */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Header and footer */
+header,
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+footer {
+  margin-top: 30px;
+}
+
+/* Navigation */
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: #174ea6;
+}
+
+/* Main content sections */
+main {
+  max-width: 850px;
+  margin: 20px auto;
+}
+
+section {
+  background-color: #ffffff;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+h1,
+h2 {
+  color: #0b3d91;
+}
+
+/* Accessible table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+caption {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+th,
+td {
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #e2e8f0;
+}
+
+/* Feedback form */
+form > div {
+  margin-bottom: 18px;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+  font: inherit;
+}
+
+fieldset {
+  margin-bottom: 18px;
+  border: 1px solid #94a3b8;
+  border-radius: 8px;
+}
+
+button {
+  padding: 12px 22px;
+  background-color: #0b3d91;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+}
+
+button:hover {
+  background-color: #082c69;
+}
+
+/* Skip link: hidden until keyboard focus */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 10px;
+  background: #ffffff;
+  color: #0b3d91;
+  padding: 12px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* Visible keyboard focus indicators */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #0b5fff;
+  outline-offset: 3px;
+}
+
+/* SVG figure */
+figure {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+figcaption {
+  font-size: 14px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+}
